@@ -1,4 +1,4 @@
-# gazebo_ros_demos
+# from gazebo_ros_demos
 * Author: Dave Coleman <davetcoleman@gmail.com>
 * License: GNU General Public License, version 3 (GPL-3.0)
 * Inception Date: 4 June 2013
