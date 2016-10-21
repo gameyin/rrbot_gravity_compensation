@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<launch>
+
+  <!-- Load the URDF into the ROS Parameter Server -->
+  <arg name="load_robot_description" default="false"/>
+  <arg name="right_electric_gripper" default="false"/>
+
+  <!-- Load universal robotic description format (URDF) -->
+  <param if="$(arg load_robot_description)" name="robot_description"
+      command="$(find xacro)/xacro.py --inorder $(find rrbot_description)/urdf/rrbot.xacro
+          left_electric_gripper:=$(arg left_electric_gripper)"/>
+
+  <param name="root_name" value="link1" />
+  <param name="grav_arm_name" value="hokuyo_link" />
+  <!-- load arm tip name -->
+  <param name="arm_tip_name" value="hokuyo_link" />
+  <!-- load joint names -->
+  <rosparam param="robot_config/joint_names">
+         [joint1, joint2]
+  </rosparam>
+  <!-- <node name="arm_sim_kinematics" pkg="kinematics" type="mykinematics" respawn="false" output="screen">
+  </node> -->
+
+
+</launch>
